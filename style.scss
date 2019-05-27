@@ -1,0 +1,169 @@
+$fontFamily:Arial, Helvetica, Sans-serif;
+
+$txtColor:#333;
+$bgColor: #000;
+$bgImage:url("https://i.ibb.co/ZWCZ9bS/pubg-bg.jpg");
+
+$btnColor:#fff;
+$btnPrimaryColor:#39b54a;
+$btnSecondaryColor:#00aeef;
+
+body{
+	margin:0;
+	padding:0;
+  color:$txtColor;
+	background-color: $bgColor;
+  font-family: $fontFamily;
+	-webkit-touch-callout:none;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.container{
+  display:flex;
+  margin:0 auto;
+  max-width:1020px;
+  min-height: 680px;
+  align-items:center;
+  flex-direction:column;
+  background-repeat: no-repeat;
+  background-size: 1020px 680px;
+  background-position: top center;
+  background-image:$bgImage;
+
+  &.guide,
+  &.guide .creativeArea,
+  &.guide .subscriptionArea,
+  &.guide .freeArea,
+  &.guide .legalArea{
+    position:relative;
+    outline: 1px dotted red;
+  }
+
+  &.guide:after,
+  &.guide .creativeArea::after,
+  &.guide .subscriptionArea::after,
+  &.guide .freeArea::after,
+  &.guide .legalArea::after{
+    top:0;
+    left:0;
+    color:#fff;
+    font-size:12px;
+    padding:5px 10px;
+    position: absolute;
+    display: inline-block;
+    background-color: red;
+    border-radius: 0px 0px 10px 0px;
+  }
+
+  &.guide{
+    background-image: none;
+  }
+
+  &.guide .dummyText{
+    display:none;
+  }
+  
+  /*&.guide::after{
+    content:"Creative Area";
+  }*/
+
+  &.guide .creativeArea::after{
+    content:"Creative Focus";
+  }
+
+  &.guide .subscriptionArea::after{
+    content:"Subscrtiption Area";
+  }
+
+  &.guide .freeArea::after{
+    content:"Free Area";
+  }
+
+  &.guide .legalArea::after{
+    content:"Legal Area";
+  }
+
+  &.direction-rtl{
+    direction: rtl;
+  }
+
+  &.display-initial .cta,
+  &.display-confirm .initial{
+    display: none;
+  }
+
+  &.display-confirm .cta,{
+    display: block;
+  }
+
+}
+
+.creativeArea{
+  width:320px;
+  height:240px;
+}
+
+.subscriptionArea{
+  width:320px;
+  display: flex;
+  min-height: 80px;
+  align-items:center;
+  flex-direction: column;
+  justify-content:center;
+
+  &.view-row{
+    flex-direction: row;
+  }
+
+  .btn{
+    border:none;
+    width:280px;
+    height: 60px;
+    outline: none;
+    cursor:pointer;
+    color:$btnColor;
+    font-size: 18px;
+    font-weight:bold;
+    text-align: center;
+    border-radius: 30px;
+
+    &.primary{
+      background-color: $btnPrimaryColor;
+    }
+
+    &.secondary{
+      background-color: $btnSecondaryColor;
+    }
+
+  }
+
+}
+
+.freeArea{
+  width:320px;
+  height: 80px;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.legalArea{
+  width:300px;
+  padding:10px;
+  font-size: 11px;
+  min-height: 150px;
+  line-height: 1.5em;
+  text-align: center;
+
+  .links{
+    margin: 10px 0;
+
+    a{
+      margin:0 5px;
+      color:inherit;
+    }
+
+  }
+
+}
